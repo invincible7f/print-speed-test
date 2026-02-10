@@ -10,7 +10,7 @@ interface RezultProps {
 timer:number
 index:number
 isActiveToggle:()=>void
-getRandomIndex:()=>number
+getRandomIndex?:()=>number
 }
 
 export default function Rezult({ timer,isActiveToggle, index }:RezultProps) {

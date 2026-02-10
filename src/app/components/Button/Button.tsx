@@ -5,7 +5,7 @@ interface ButtonProps{
   reset:()=>void
   handleRestart:() => void
 }
-export default function Button({handleRestart}:ButtonProps) {
+export default function Button({handleRestart,reset}:ButtonProps) {
 
 
   return (

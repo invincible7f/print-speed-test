@@ -11,7 +11,7 @@ currentIndex:number
 }
 
 
-export default function RandomText({mounted,  symbols,highlight,currentIndex }:RandomTextProps) {
+export default function RandomText({mounted,  symbols,currentIndex }:RandomTextProps) {
 
 
 

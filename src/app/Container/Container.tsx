@@ -22,7 +22,7 @@ export default function Container() {
         <h1 className="text-slate-900 font-bold text-3xl ">
           Tecт швидкості друку
         </h1>
-      <Button handleRestart={handleRestart}/>
+      <Button handleRestart={handleRestart} reset={reset}/>
       </div>
 
   
