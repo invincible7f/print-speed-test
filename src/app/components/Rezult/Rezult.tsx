@@ -85,7 +85,7 @@ export default function Rezult({ timer,isActiveToggle, index }:RezultProps) {
                
 useEffect(() => {
   const space = (event: KeyboardEvent): void => {
-    if (event.code === "Space") {
+    if (event.code === "Space" || event.key === " " ) {
         if (inputWord.endsWith(" ")) return;
 
    
