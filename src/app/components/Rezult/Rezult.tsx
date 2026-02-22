@@ -113,7 +113,7 @@ useEffect(() => {
 <div className="relative flex w-full">
    {timer === 0 && <div className="w-full opacity-40 absolute bg-slate-100 inset-0 "></div>}
       <textarea
-        className={`bg-slate-100 mt-5 w-full resize-none p-5 rounded-md border-2 border-slate-300`}
+        className={`bg-slate-100 mt-5 w-full resize-none p-5 text-slate-800 rounded-md border-2 border-slate-300`}
         placeholder="Почніть друкувати"
           disabled={timer === 0} 
         onChange={(e)=>{ 
