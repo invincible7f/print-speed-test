@@ -83,25 +83,25 @@ export default function Rezult({ timer,isActiveToggle, index }:RezultProps) {
                 setWordCount(0);
               }, [index])
                
-useEffect(() => {
-  const space = (event: KeyboardEvent): void => {
-    if (event.code === "Space" || event.key ===" " ) {
-        if (inputWord.endsWith(" ")) return;
+// useEffect(() => {
+//   const space = (event: KeyboardEvent): void => {
+//     if (event.code === "Space" || event.key ===" " ) {
+//         if (inputWord.endsWith(" ")) return;
 
    
-     const lastWord: string = inputWord.trim().split(" ").slice(-1)[0] || "";
+//      const lastWord: string = inputWord.trim().split(" ").slice(-1)[0] || "";
 
-      if (lastWord !== null && words.includes(lastWord)) {
-        setWordCount((prev) => prev + 1);
+//       if (lastWord !== null && words.includes(lastWord)) {
+//         setWordCount((prev) => prev + 1);
     
-        console.log("Word matched:", lastWord);
-      }
-    }
-  };
+//         console.log("Word matched:", lastWord);
+//       }
+//     }
+//   };
 
-  document.addEventListener("keydown", space);
-  return () => document.removeEventListener("keydown", space);
-}, [inputWord, words]);
+//   document.addEventListener("keydown", space);
+//   return () => document.removeEventListener("keydown", space);
+// }, [inputWord, words]);
 
   return (
     <div>
@@ -116,26 +116,51 @@ useEffect(() => {
         className={`bg-slate-100 mt-5 w-full resize-none p-5 text-slate-800 rounded-md border-2 border-slate-300`}
         placeholder="Почніть друкувати"
           disabled={timer === 0} 
-        onChange={(e)=>{ 
+    //     onChange={(e)=>{ 
          
-          const val:string = e.target.value; 
-          const textType:string = e.target.value
-           const isAdding = (e.nativeEvent as InputEvent).inputType?.includes("insert");
-          if(isAdding){
-            const lastChar:string = val.slice(-1) 
-            setInputText(lastChar)
-            isActiveToggle()
+    //       const val:string = e.target.value; 
+    //       const textType:string = e.target.value
+    //        const isAdding = (e.nativeEvent as InputEvent).inputType?.includes("insert");
+    //       if(isAdding){
+    //         const lastChar:string = val.slice(-1) 
+    //         setInputText(lastChar)
+    //         isActiveToggle()
         
-          }
-          else {
-      setInputText(val);
+    //       }
+    //       else {
+    //   setInputText(val);
    
-    }
-      setInputWord(textType)
+    // }
+    //   setInputWord(textType)
 
          
-          }
+    //       }
+    //   }
+    onChange={(e) => {
+  const val = e.target.value;
+  setInputWord(val);
+
+  const isAdding = (e.nativeEvent as InputEvent).inputType?.includes("insert");
+
+  if (isAdding) {
+    const lastChar = val.slice(-1);
+    setInputText(lastChar);
+    isActiveToggle();
+
+    if (lastChar === " ") {
+      const typedWords = val.trim().split(/\s+/);
+      const lastTypedWord = typedWords[typedWords.length - 1];
+
+      if (words.includes(lastTypedWord)) {
+        setWordCount((prev) => prev + 1);
+        console.log("Word matched:", lastTypedWord);
       }
+    }
+    
+  } else {
+    setInputText(val);
+  }
+}}
       ></textarea>
       </div>
       <div className="flex flex-col sm:flex-row justify-center items-center sm:justify-between gap-5 w-full ">
