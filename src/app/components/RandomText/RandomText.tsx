@@ -22,8 +22,8 @@ export default function RandomText({mounted,  symbols,currentIndex }:RandomTextP
 
   
   return (
-    <div className="flex bg-slate-50 items-center mt-5 rounded-md h-[150px]">
-      <p className="text-lg mt-5">     {symbols.map((item, index) => {
+    <div className="flex bg-slate-50 w-full items-center mt-5 rounded-md h-auto p-5">
+      <p className="text-lg "> {symbols.map((item, index) => {
         let colorClass = "text-slate-600"
         if(index < currentIndex){
           colorClass = "text-emerald-500"

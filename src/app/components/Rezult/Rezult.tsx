@@ -110,7 +110,7 @@ useEffect(() => {
       symbols={symbols} 
        currentIndex={currentIndex}/>
      
-<div className="relative">
+<div className="relative flex w-full">
    {timer === 0 && <div className="w-full opacity-40 absolute bg-slate-100 inset-0 "></div>}
       <textarea
         className={`bg-slate-100 mt-5 w-full resize-none p-5 rounded-md border-2 border-slate-300`}
@@ -138,22 +138,22 @@ useEffect(() => {
       }
       ></textarea>
       </div>
-      <div className="flex justify-between gap-5 w-full ">
-        <div className="flex mt-8 bg-blue-50 w-96 h-28 flex-col text-blue-500 rounded-md">
+      <div className="flex flex-col sm:flex-row justify-center items-center sm:justify-between gap-5 w-full ">
+        <div className="flex mt-8 bg-blue-50 w-full md:w-96 h-28 flex-col text-blue-500 rounded-md">
           <p className="flex mt-4 ml-5">
             <Timer size={20} />
             <span className="ml-2">Час</span>
           </p>
           <h3 className="ml-5 mt-3 text-3xl font-bold">{timer}</h3>
         </div>
-        <div className="flex flex-col mt-8 bg-emerald-50   text-emerald-500 w-96 h-28 rounded-md">
+        <div className="flex flex-col mt-8 bg-emerald-50   w-full text-emerald-500 md:w-96 h-28 rounded-md">
           <p className="flex mt-4 ml-5">
             <Trophy size={20} />
             <span className="ml-2">Слів</span>
           </p>
           <h3 className="ml-5 mt-3 text-3xl font-bold">{wordCount} сл/хв</h3>
         </div>
-        <div className="flex  flex-col mt-8 bg-fuchsia-50 text-fuchsia-500 w-96 h-28 rounded-md">
+        <div className="flex  flex-col mt-8 bg-fuchsia-50 w-full text-fuchsia-500 md:w-96 h-28 rounded-md">
           <p className="flex mt-4 ml-5">
             <Trophy size={20} />
             <span className="ml-2">Символів</span>

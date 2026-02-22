@@ -9,10 +9,10 @@ export default function Button({handleRestart,reset}:ButtonProps) {
 
 
   return (
-    <button className="flex justify-between items-center  bg-blue-500 rounded-sm  text-white text-md w-40 p-3 hover:bg-blue-400 hover:scale-95 transition duration-500 ease-in-out "
+    <button className="flex  items-center gap-1 md:gap-3 h-1/2  bg-blue-500 rounded-sm text-sm  text-white sm:text-md  md:w-36 p-2 sm:p-3  hover:bg-blue-400 hover:scale-98 transition duration-500 ease-in-out "
     onClick={()=>{ handleRestart()
     }}>
-      <RefreshCw size={23} /> Новий текст{" "}
+      <RefreshCw size={20} /> Новий текст
     </button>
   );
 }

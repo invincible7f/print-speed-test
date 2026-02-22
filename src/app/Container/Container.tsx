@@ -17,10 +17,10 @@ export default function Container() {
 
   
   return (
-    <div className="relative max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden h-[650px] p-10">
+    <div className="relative max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden h-auto p-10">
       <div className="flex justify-between ">
-        <h1 className="text-slate-900 font-bold text-3xl ">
-          Tecт швидкості друку
+        <h1 className="text-slate-900 font-bold text-2xl md:text-3xl ">
+          Tecт швидкості <br className="sm:hidden"/>друку 
         </h1>
       <Button handleRestart={handleRestart} reset={reset}/>
       </div>
