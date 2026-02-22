@@ -153,7 +153,7 @@ export default function Rezult({ timer,isActiveToggle, index }:RezultProps) {
 
       if (words.includes(lastTypedWord)) {
         setWordCount((prev) => prev + 1);
-        console.log("Word matched:", lastTypedWord);
+       
       }
     }
     
